@@ -1,16 +1,40 @@
 {
   "name": "kolor",
-  "version": "0.0.1",
   "description": "",
+  "author": "harris.jose@outlook.com",
+  "version": "0.0.1",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.conf.js --host 0.0.0.0",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "ava --verbose"
   },
-  "author": "harris.jose@outlook.com",
-  "license": "ISC",
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "source": [
+      "src/**/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": {
+      "presets": [
+        "es2015",
+        "stage-0"
+      ],
+      "plugins": [
+        "babel-plugin-inferno",
+        "babel-plugin-syntax-jsx",
+        "babel-plugin-syntax-object-rest-spread",
+        "babel-plugin-transform-object-rest-spread"
+      ]
+    }
+  },
   "devDependencies": {
-    "standard": "^10.0.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -29,6 +53,9 @@
     "webpack-dev-server": "2.7.1"
   },
   "dependencies": {
+    "ava": "^0.22.0",
+    "babel-polyfill": "^6.26.0",
+    "clipboard-copy": "^1.2.0",
     "history": "^4.6.3",
     "inferno": "^3",
     "inferno-component": "^3",
