@@ -1,30 +1,33 @@
-// inferno module
-import { render } from 'inferno';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Route
+} from 'react-router-dom';
 
-// routing modules
-import { Router, Route } from 'inferno-router';
-import createBrowserHistory from 'history/createBrowserHistory';
-
-// app components
-import App from './app';
-import currentColor from './currentColor';
+import App from './components/app';
+import Home from './components/home';
+import About from './components/about';
+import NotFound from './components/404';
+import Shades from './components/shades';
 
 if (module.hot) {
-    require('inferno-devtools');
+  require('react-devtools');
 }
 
-const browserHistory = createBrowserHistory();
-
 const routes = (
-  <Router history={ browserHistory }>
-    <Route component={ App }>
-      <Route path="/:color" component={ currentColor } />
-    </Route>
-  </Router>
+  <BrowserRouter>
+    <App>
+      <Route path="/" component={ Home } />
+      <Route path="/about" component={ About } />
+      <Route path="/:color([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})" component={ Shades } />
+      <Route path="*" component={ NotFound } />
+    </App>
+  </BrowserRouter>
 );
 
-render(routes, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById('app'));
 
 if (module.hot) {
-    module.hot.accept()
+  module.hot.accept()
 }

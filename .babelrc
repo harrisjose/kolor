@@ -2,9 +2,17 @@
     "env": {
         "development": {
             "presets": [
-                ["es2015", {"loose": true, "modules": false}], "stage-0"
+              ["es2015", {"loose": true, "modules": false}],
+              "stage-0",
+              "react",
+              "react-hmre"
             ]
         }
     },
-    "plugins": ["babel-plugin-syntax-jsx", ["babel-plugin-inferno", {"imports": true}]]
+    "plugins": [
+      "transform-runtime",
+      "syntax-jsx",
+      "syntax-object-rest-spread",
+      "transform-object-rest-spread"
+    ]
 }

@@ -1,7 +1,11 @@
+const path = require('path');
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    './src/index.js',
+    'webpack-dev-server/client?http://localhost:8080'
+  ],
   output: {
     path: '/',
     filename: 'bundle.js',
@@ -10,7 +14,9 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loader: 'babel-loader'
+      exclude: /(node_modules)/,
+      loader: 'babel-loader',
+      include: path.resolve(__dirname, "src"),
     }]
   },
   devServer: {
