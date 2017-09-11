@@ -1,4 +1,5 @@
 import React from 'react';
+const copy = require('clipboard-copy')
 
 function Strip({ hexCode }) {
   const styles = {
@@ -7,8 +8,11 @@ function Strip({ hexCode }) {
     height: '100px',
     display: 'inline-block'
   };
+  const copyHex = () => {
+    copy(hexCode);
+  };
   return (
-    <div style={ styles }></div>
+    <div style={ styles } onClick={ copyHex }></div>
   );
 }
 

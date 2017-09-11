@@ -1,18 +1,26 @@
 {
-    "env": {
-        "development": {
-            "presets": [
-              ["es2015", {"loose": true, "modules": false}],
-              "stage-0",
-              "react",
-              "react-hmre"
-            ]
-        }
-    },
-    "plugins": [
-      "transform-runtime",
-      "syntax-jsx",
-      "syntax-object-rest-spread",
-      "transform-object-rest-spread"
-    ]
+  "env": {
+    "development": {
+      "presets": [
+        ["es2015", {"loose": true, "modules": false}],
+        "stage-0",
+        "react",
+        "react-hmre"
+      ],
+      "plugins": [
+        "emotion",
+        "transform-runtime",
+        "syntax-jsx",
+        "syntax-object-rest-spread",
+        "transform-object-rest-spread"
+      ]
+    }
+  },
+  "plugins": [
+    "emotion",
+    "transform-runtime",
+    "syntax-jsx",
+    "syntax-object-rest-spread",
+    "transform-object-rest-spread"
+  ]
 }

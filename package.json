@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.conf.js --host 0.0.0.0",
+    "start": "webpack-dev-server -d --config webpack.conf.js --host 0.0.0.0",
     "lint": "eslint src",
     "test": "ava --verbose"
   },
@@ -29,6 +29,8 @@
         "react-hmre"
       ],
       "plugins": [
+        "emotion",
+        "transform-runtime",
         "babel-plugin-syntax-jsx",
         "babel-plugin-syntax-object-rest-spread",
         "babel-plugin-transform-object-rest-spread"
@@ -49,6 +51,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.7",
     "eslint": "^4.5.0",
     "eslint-config-react-app": "^2.0.0",
     "eslint-plugin-flowtype": "^2.34.1",
@@ -56,7 +59,9 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "glob": "^7.1.2",
+    "postcss-loader": "^2.0.6",
     "react-devtools": "^2.5.0",
+    "style-loader": "^0.18.2",
     "url": "^0.11.0",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1"

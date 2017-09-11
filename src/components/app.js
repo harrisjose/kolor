@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from '../styles/site.css';
 
 export default function({ children }) {
   return (
-      <div>
-        <h1>Kolor</h1>
-        { children }
-      </div>
+    <div className={ styles.app }>
+      <a>Kolor</a>
+      { children }
+    </div>
   );
 }

@@ -1,19 +1,18 @@
 import React from 'react';
-import { css } from 'emotion';
-import styled from 'react-emotion';
+import styled from 'emotion/react';
 
 export default function() {
-  const containerFluid = css`
+  const Container = styled('div')`
     display: flex;
     flex-direction: row;
     justify-content: center;
   `;
   const H1 = styled('h1')`
-    font-size: 3rem;
+    font-size: 10rem;
   `;
   return (
-    <div className={ containerFluid }>
+    <Container>
       <H1>404</H1>
-    </div>
+    </Container>
   );
 }

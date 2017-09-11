@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import App from './components/app';
@@ -11,6 +12,9 @@ import About from './components/about';
 import NotFound from './components/404';
 import Shades from './components/shades';
 
+// eslint-disable-next-line no-unused-vars
+import styles from './styles/site.css';
+
 if (module.hot) {
   require('react-devtools');
 }
@@ -18,10 +22,12 @@ if (module.hot) {
 const routes = (
   <BrowserRouter>
     <App>
-      <Route path="/" component={ Home } />
-      <Route path="/about" component={ About } />
-      <Route path="/:color([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})" component={ Shades } />
-      <Route path="*" component={ NotFound } />
+      <Switch>
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/about" component={ About } />
+        <Route exact path="/:color([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})" component={ Shades } />
+        <Route component={ NotFound } />
+      </Switch>
     </App>
   </BrowserRouter>
 );
@@ -29,5 +35,5 @@ const routes = (
 ReactDOM.render(routes, document.getElementById('app'));
 
 if (module.hot) {
-  module.hot.accept()
+  module.hot.accept();
 }
