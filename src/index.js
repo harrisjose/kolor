@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import "fractures/dist/fractures.css";
+// eslint-disable-next-line no-unused-vars
+import styles from './styles/site.css';
+
 import {
   BrowserRouter,
   Route,
@@ -11,9 +16,6 @@ import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/404';
 import Shades from './components/shades';
-
-// eslint-disable-next-line no-unused-vars
-import styles from './styles/site.css';
 
 if (module.hot) {
   require('react-devtools');
