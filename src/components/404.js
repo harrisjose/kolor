@@ -12,7 +12,7 @@ export default function() {
     font-size: 2rem;
   `;
   return (
-    <div className="t-cursive t-center pt-5">
+    <div className="t-center pt-5">
       <H1>Um,</H1>
       <H2>there ain't no sunshine</H2>
       <H3>on this page..</H3>

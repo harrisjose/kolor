@@ -14,7 +14,7 @@ export default function ({ hexCode, isCurrent }) {
   `;
   const active = css`
     box-shadow: 0px 0px 20px 0px #${hexCode};
-    transform: scale(0.95);
+    transform: scale(0.98);
   `;
   const copyHex = () => {
     copy(`#${hexCode}`);

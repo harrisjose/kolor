@@ -6,7 +6,8 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -d --config webpack.conf.js --host 0.0.0.0",
+    "start": "webpack-dev-server -d --config webpack.conf.dev.js --host 0.0.0.0",
+    "build": "",
     "lint": "eslint src",
     "test": "ava --verbose"
   },

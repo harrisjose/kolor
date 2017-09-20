@@ -1,3 +1,8 @@
+:root {
+  --green: #2BB772;
+  --blue: #3274D6;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
@@ -6,11 +11,10 @@ body {
 a {
   color: #72a0e3;
 }
-
-:global .t-cursive {
-  font-family: 'Vibur', cursive;
-  font-size: 1.15em;
+:global .link:hover {
+  background-color: #e8f0fc;
 }
+
 :global .t-mb {
   font-weight: 500;
 }
@@ -32,6 +36,13 @@ a {
 }
 :global .t-xxl {
   font-size: 3.8rem;
+}
+
+:global .green {
+  color: var(--green);
+}
+:global .blue {
+  color: var(--blue);
 }
 
 :global .container-centered {

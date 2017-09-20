@@ -75,4 +75,22 @@ function hexToHsl(hexCode) {
   return [h, s, l];
 }
 
-module.exports = { isValidHexCode, expandHexCode, hexToHsl, hslToHex };
+function getLightnessArray(l) {
+  const offset = 10;
+  let lightnessArray = [];
+
+  let i = Number(l);
+  while (i > 0) {
+    lightnessArray.push(i);
+    i -= offset;
+  }
+
+  i = Number(l) + offset;
+  while (i < 100) {
+    lightnessArray.push(i);
+    i += offset;
+  }
+  return lightnessArray.sort((a,b) => a-b);
+}
+
+module.exports = { isValidHexCode, expandHexCode, hexToHsl, hslToHex, getLightnessArray };

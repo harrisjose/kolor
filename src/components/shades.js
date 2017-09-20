@@ -1,25 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import Strip from './color-strip';
-import { expandHexCode, hexToHsl, hslToHex } from '../utils/common';
-
-const getLightnessArray = (l) => {
-  const offset = 10;
-  let lightnessArray = [];
-
-  let i = Number(l);
-  while (i > 0) {
-    lightnessArray.push(i);
-    i -= offset;
-  }
-
-  i = Number(l) + offset;
-  while (i < 100) {
-    lightnessArray.push(i);
-    i += offset;
-  }
-  return lightnessArray.sort((a,b) => a-b);
-}
+import { expandHexCode, hexToHsl, hslToHex, getLightnessArray } from '../utils/common';
 
 const wrapper = css`
   margin: 10px;

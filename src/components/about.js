@@ -12,7 +12,7 @@ export default function() {
 
   return (
     <div className="w-66 t-center t-mb grey pt-5 mx-auto">
-      <p>This started off as a clone of <a>colllor.com</a> because, I thought I could build it better with..something other than flash. Eventually, I realised that I only ever used it to get the shades of colors...and that <a href="https://palx.jxnblk.com/" target="_blank" rel="noopener noreferrer">palx</a> was a waaay better tool.</p>
+      <p>This started off as a clone of <a className="link">colllor.com</a> because, I thought I could build it better with..something other than flash. Eventually, I realised that I only ever used it to get the shades of colors...and that <a className="link"  href="https://palx.jxnblk.com/" target="_blank" rel="noopener noreferrer">palx</a> was a waaay better tool.</p>
       <br/>
       <p>This is now a WIP combining stuff from both palx and collor</p>
       <br/>

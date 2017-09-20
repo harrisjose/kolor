@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { css } from 'emotion';
 import styles from '../styles/site.css';
+
+const navLink = css`
+  color: #333;
+  &:hover {
+    background-color: initial;
+  }
+`;
 
 export default function({ children }) {
   return (
@@ -9,13 +17,11 @@ export default function({ children }) {
         <div className="container-centered">
           <ul className="flex flex-gap-2 flex-between uppercase t-bold">
             <li className="t-medium">
-              <Link to="/">Kolor</Link>
+              <Link className={ navLink } to="/">Kolor</Link>
             </li>
             <div className="flex flex-gap-2 t-small">
-              <li><Link to="/about">About</Link></li>
-              <li>
-                <a href="https://github.com/harris.jose/kolor" rel="noopener noreferrer">Source</a>
-              </li>
+              <li><Link className={ navLink } to="/about">About</Link></li>
+              <li><a className={ navLink } href="https://github.com/harrisjose/kolor" rel="noopener noreferrer">Source</a></li>
             </div>
           </ul>
         </div>
