@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import "fractures/dist/fractures.css";
-// eslint-disable-next-line no-unused-vars
-import styles from './styles/site.css';
-
 import {
   BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom';
+
+import "fractures/dist/fractures.css";
+// eslint-disable-next-line no-unused-vars
+import styles from './styles/site.css';
 
 import App from './components/app';
 import Home from './components/home';

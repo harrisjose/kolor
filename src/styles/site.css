@@ -1,10 +1,49 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
+}
+a {
+  color: #72a0e3;
 }
 
-.app {
-  width: 100%;
-  height: 100%;
+:global .t-cursive {
+  font-family: 'Vibur', cursive;
+  font-size: 1.15em;
+}
+:global .t-mb {
+  font-weight: 500;
+}
+:global .t-bold {
+  font-weight: 700;
+}
+
+:global .t-center {
+  text-align: center;
+}
+:global .t-small {
+  font-size: 0.8rem;
+}
+:global .t-medium {
+  font-size: 1.3rem
+}
+:global .t-large {
+  font-size: 1.8rem;
+}
+:global .t-xxl {
+  font-size: 3.8rem;
+}
+
+:global .container-centered {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.appHeader {
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.appContent {
+  margin-top: 4rem;
 }
