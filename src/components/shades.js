@@ -23,14 +23,14 @@ export default function({ match: { params } }) {
 
   const [h, s, l] = hexToHsl(hex);
 
-  const lum = getLightnessArray(l);
+  const lum = getLightnessArray(l, 10);
 
-  let shades = lum.map((lightness) => {
+  const shades = lum.map((lightness) => {
     return lightness === l ? hex : hslToHex(h, s, lightness);
   });
 
   return (
-    <div className="container-centered flex flex-center pt-5 flex-wrap">
+    <div className="container-centered flex flex-center pt-5 px-1 flex-wrap">
       { shades.map((shade) =>  <Shade color={ shade } key={ shade } isCurrent={ shade === hex } /> ) }
     </div>
   );

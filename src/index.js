@@ -21,7 +21,7 @@ if (module.hot) {
 }
 
 const routes = (
-  <BrowserRouter>
+  <BrowserRouter basename={"kolor/#"}>
     <App>
       <Switch>
         <Route exact path="/" component={ Home } />

@@ -38,6 +38,20 @@ a {
   font-size: 3.8rem;
 }
 
+:global .icon-xs {
+  width: 13px;
+  height: 13px;
+}
+
+:global .icon-md {
+  width: 32px;
+  height: 32px;
+}
+
+:global .icon-middle {
+  vertical-align: middle;
+}
+
 :global .green {
   color: var(--green);
 }
@@ -46,8 +60,8 @@ a {
 }
 
 :global .container-centered {
+  max-width: 980px;
   margin: 0 auto;
-  max-width: 960px;
 }
 
 .appHeader {

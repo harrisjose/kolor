@@ -75,8 +75,7 @@ function hexToHsl(hexCode) {
   return [h, s, l];
 }
 
-function getLightnessArray(l) {
-  const offset = 10;
+function getLightnessArray(l, offset) {
   let lightnessArray = [];
 
   let i = Number(l);

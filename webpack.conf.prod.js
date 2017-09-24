@@ -1,19 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+
+const cssFilename = 'static/css/[name].[contenthash:8].css';
+
+process.env.NODE_ENV = 'production';
 
 module.exports = {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   entry: [
     './src/index.js',
-    './src/styles/site.css',
-    'webpack-dev-server/client?http://localhost:8080'
+    './src/styles/site.css'
   ],
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: 'http://localhost:8080/'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
+
   module: {
     loaders: [
       {
@@ -71,29 +78,20 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    contentBase: './build',
-    port: 8080,
-    noInfo: false,
-    hot: true,
-    inline: true,
-    proxy: {
-      '/': {
-        bypass: function (req, res, proxyOptions) {
-          return '/public/index.html'
-        }
-      }
-    }
-  },
+
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('production'),
+        'BABEL_ENV': JSON.stringify('production')
       }
     }),
     new HtmlWebpackPlugin({
       template: 'public/index.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new CleanWebpackPlugin(['dist'], { verbose: true }),
+    new ExtractTextPlugin({ filename: cssFilename }),
+    new MinifyPlugin(),
+    new ManifestPlugin({ fileName: 'asset-manifest.json' })
   ]
-};
+}
